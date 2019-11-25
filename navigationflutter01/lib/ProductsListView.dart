@@ -17,10 +17,7 @@ class ProductsList extends StatelessWidget {
           return ListTile(
             title: Text(products[index].title),
             onTap: (){
-              Navigator.push(context, new MaterialPageRoute(
-                builder: (context) => new SecondScreen(product: products[index])
-              )
-              );
+              _navagatTonext(context,products[index]);
             },
           );
         },
@@ -28,6 +25,23 @@ class ProductsList extends StatelessWidget {
     );
   }
 }
+
+// class  _navagatTonext(BuildContext context) async {
+//   final result = await Navigator.push(context, MaterialPageRoute(builder: (context) => New SeccondScreen()));
+
+//   Scaffold.of(context).showSnackBar(Snackbar(content:Text('$result')));
+  
+// }
+
+void _navagatTonext (BuildContext context,Product product) async{
+  final result = await Navigator.push(context, MaterialPageRoute(builder:(context) => SecondScreen(product: product)));
+  Scaffold.of(context).showSnackBar(SnackBar(content:Text('$result')));
+}
+
+
+
+
+
 
 
 // class ProductList extends StatelessWidget {
