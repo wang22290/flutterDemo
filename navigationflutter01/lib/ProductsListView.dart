@@ -17,10 +17,7 @@ class ProductsList extends StatelessWidget {
           return ListTile(
             title: Text(products[index].title),
             onTap: (){
-              Navigator.push(context, new MaterialPageRoute(
-                builder: (context) => new SecondScreen(product: products[index])
-              )
-              );
+              _navagatTonext(context,products[index]);
             },
           );
         },
@@ -29,7 +26,16 @@ class ProductsList extends StatelessWidget {
   }
 }
 
+//返回带参数，必须用异步接收，跳转
+void _navagatTonext (BuildContext context,Product product) async{
+  final result = await Navigator.push(context, MaterialPageRoute(builder:(context) => SecondScreen(product: product)));
+  Scaffold.of(context).showSnackBar(SnackBar(content:Text('$result')));
+}
 
+
+
+
+//不带参数跳转
 // class ProductList extends StatelessWidget {
 //   final List<Product> products;
 //   ProductList({Key key,@required this.products}):super(key:key);

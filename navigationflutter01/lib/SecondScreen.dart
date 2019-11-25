@@ -15,7 +15,7 @@ class SecondScreen extends StatelessWidget {
         child: RaisedButton(
           child: Text("${product.description}"),
           onPressed: (){
-            Navigator.pop(context);
+            Navigator.pop(context,'1731039201');
           },
         ),
       ),
