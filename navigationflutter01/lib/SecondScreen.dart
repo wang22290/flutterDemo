@@ -13,7 +13,7 @@ class SecondScreen extends StatelessWidget {
       ),
       body: Center(
         child: RaisedButton(
-          child: Text("${product.description}"),
+          child: Image.asset("images/Snip20191122_18.png",width: 100,height: 100,),
           onPressed: (){
             Navigator.pop(context,'1731039201');
           },
