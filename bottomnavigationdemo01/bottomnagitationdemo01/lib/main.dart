@@ -13,7 +13,7 @@ class bottomNavigationDemo extends StatelessWidget {
     return MaterialApp(
       title:"dddddd",
       theme: ThemeData(
-        primaryColor: Colors.blue,
+        primarySwatch: Colors.lightBlue,
       ),
       home: Scaffold(
               appBar: AppBar(
